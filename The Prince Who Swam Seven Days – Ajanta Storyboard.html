@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Prince Who Swam Seven Days – Ajanta Storyboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Mukta:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--cave:#17110d;--umber:#2a1d14;--ochre:#e0a85a;--verm:#b5482a;--lapis:#2f4a7a;--terra:#6f8466;--lime:#f1e6cf;--mut:#b9a98c;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--cave);color:var(--lime);font:400 1.25rem/1.65 Mukta,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:700;line-height:1.02;margin:0}
+button{font:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+#gl{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+main,footer{position:relative;z-index:1}
+#bar{position:fixed;left:0;top:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--lapis),var(--ochre),var(--verm));z-index:50}
+header.nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:1rem 1.4rem;z-index:40}
+.brand{font:700 1.5rem "Cormorant Garamond",serif;color:var(--ochre)}
+.tg{display:flex;gap:.7rem;align-items:center;background:rgba(23,17,13,.65);backdrop-filter:blur(10px);border:1px solid var(--ochre);color:var(--lime);padding:.45rem .9rem;border-radius:99px;font-size:.9rem;cursor:pointer}
+.tg i{width:34px;height:18px;border-radius:99px;background:var(--umber);border:1px solid var(--ochre);position:relative}
+.tg i::after{content:"";position:absolute;top:2px;left:2px;width:12px;height:12px;border-radius:50%;background:var(--ochre);transition:transform .35s cubic-bezier(.7,0,.2,1)}
+.tg[aria-checked=true] i::after{transform:translateX(16px)}
+#cur{position:fixed;left:0;top:0;width:38px;height:38px;margin:-19px;border:1.5px solid var(--ochre);border-radius:50%;pointer-events:none;z-index:60;opacity:0}
+@media(hover:none),(pointer:coarse){#cur{display:none}}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:7rem 7vw 4rem}
+.hero h1{font-size:clamp(3rem,8vw,7rem);color:var(--ochre);max-width:10ch}
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .04em .1em}.ch{display:inline-block}
+.hero p{max-width:38rem;color:var(--mut);margin:1.6rem 0 0;font-size:1.45rem}
+.btn{margin-top:2rem;padding:1rem 2.2rem;border-radius:99px;background:var(--ochre);color:var(--cave);font-weight:600;border:0;cursor:pointer}
+.mq{overflow:hidden;white-space:nowrap;border-block:1px solid rgba(224,168,90,.35);padding:.9rem 0;background:rgba(23,17,13,.6);backdrop-filter:blur(6px)}
+.mq div{display:inline-block;font:italic 500 2.2rem "Cormorant Garamond",serif;color:var(--ochre)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.4rem;max-width:72rem;margin:0 auto;padding:7rem 1.4rem;perspective:900px}
+.card{padding:2rem;border:1px solid rgba(224,168,90,.4);border-radius:18px;background:rgba(42,29,20,.62);backdrop-filter:blur(12px)}
+.card h3{color:var(--ochre);font-size:2rem;margin-bottom:.6rem}.card p{margin:0;color:var(--mut)}
+#story{counter-reset:pn}
+.panel{position:relative;counter-increment:pn;display:grid;gap:2rem;align-items:center;max-width:72rem;margin:0 auto;padding:4rem 1.4rem}
+@media(min-width:760px){.panel{grid-template-columns:1.25fr 1fr}}
+.panel::before{content:"0" counter(pn);position:absolute;right:2%;top:0;font:700 clamp(8rem,28vw,20rem)/1 "Cormorant Garamond",serif;color:transparent;-webkit-text-stroke:1px rgba(224,168,90,.18);z-index:-1;pointer-events:none;transform:translateX(calc(var(--p,0)*-70px))}
+.h #story{height:100vh;overflow:hidden}
+.h .track{display:flex;height:100vh;width:max-content}
+.h .panel{flex:0 0 100vw;width:100vw;max-width:none;margin:0;height:100vh;padding:11vh 8vw 14vh;grid-template-columns:1.3fr 1fr}
+figure{position:relative;margin:0;border:3px solid var(--ochre);outline:1px solid var(--verm);outline-offset:6px;background:var(--umber);overflow:hidden;clip-path:inset(0 100% 0 0);transition:clip-path 1.3s cubic-bezier(.7,0,.2,1),background .6s}
+.in figure{clip-path:inset(0 0 0 0)}
+figure::after{content:"";position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;opacity:.4;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .1 0 0 0 0 .07 0 0 0 0 .05 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")}
+svg.scene{display:block;width:100%;height:auto}
+svg.scene rect:first-child{transition:fill .6s}
+.ln{fill:none;stroke:var(--lime);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.js .ln{stroke-dasharray:1;stroke-dashoffset:1}.js .f{opacity:0}
+.in .ln{animation:draw 2s .5s ease forwards}.in .f{animation:fade 1.2s .9s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}@keyframes fade{to{opacity:1}}
+.par{transform:translateX(calc(var(--p,0)*-34px))}
+.txt{transition:transform 1s .5s,opacity 1s .5s}
+.js .txt{opacity:0;transform:translateX(30px)}.js .in .txt{opacity:1;transform:none}
+.shot{display:inline-block;border:1px solid var(--terra);padding:.1rem .8rem;border-radius:99px;color:var(--terra);font-size:1.05rem;margin-bottom:1rem}
+.txt h2{font-size:clamp(2rem,4.4vw,3.4rem);color:var(--ochre);margin-bottom:.8rem}
+.note{margin-top:1.2rem;padding-left:1rem;border-left:3px solid var(--verm);color:var(--mut);font-size:1.12rem}
+.sketch svg.scene rect:first-child{fill:#f1e6cf}
+.sketch .f{opacity:0!important}
+.sketch .ln{stroke:#17110d}
+.sketch figure{background:#f1e6cf}
+#film{position:fixed;left:50%;bottom:calc(1.2rem + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:flex;align-items:center;gap:.5rem;padding:.5rem .9rem;border-radius:99px;background:rgba(23,17,13,.72);backdrop-filter:blur(12px);border:1px solid rgba(224,168,90,.5);z-index:45;opacity:0;visibility:hidden}
+#film button{width:34px;height:34px;border-radius:50%;border:1px solid var(--ochre);background:transparent;color:var(--lime);font-weight:600;font-size:.85rem;cursor:pointer;transition:.3s}
+#film button.on{background:var(--ochre);color:var(--cave)}
+#cnt{padding:0 .6rem;font-size:.85rem;color:var(--mut);min-width:8rem}
+@media(max-width:899px){#film{display:none}}
+footer{padding:7rem 1.4rem 8rem;text-align:center;background:linear-gradient(transparent,var(--umber) 30%)}
+footer h2{font-size:clamp(2.2rem,6vw,4.4rem);color:var(--ochre)}
+footer p{max-width:40rem;margin:1rem auto;color:var(--mut)}
+.pal{display:flex;flex-wrap:wrap;gap:1.2rem;justify-content:center;margin:2.4rem auto}
+.pal button{width:130px;height:170px;border:0;border-radius:65px 65px 8px 8px;padding:0 .4rem 1rem;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;font-size:1.05rem;font-weight:600;cursor:pointer;color:var(--cave);transition:transform .4s cubic-bezier(.7,0,.2,1)}
+.pal button:hover{transform:translateY(-12px) rotate(-2deg)}
+#toast{position:fixed;left:50%;top:4.5rem;transform:translate(-50%,-16px);background:var(--ochre);color:var(--cave);padding:.5rem 1.2rem;border-radius:99px;font-weight:600;opacity:0;transition:.4s;z-index:70;pointer-events:none}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+.id{margin-top:1.8rem;padding:.9rem 1.3rem;border:1px solid rgba(224,168,90,.45);border-left:3px solid var(--verm);border-radius:12px;background:rgba(42,29,20,.6);backdrop-filter:blur(10px);font-size:1.2rem;line-height:1.5}.id b{display:block;font:700 2.3rem "Cormorant Garamond",serif;color:var(--ochre)}.id span{color:var(--mut)}
+.sig{font:italic 500 1.7rem "Cormorant Garamond",serif;color:var(--lime)!important}
+.card p{font-size:1.2rem}.card h3{font-size:2.3rem}
+#cnt{font-size:1rem;min-width:9rem}
+.h .panel{padding:12vh 6vw 15vh;gap:3rem;grid-template-columns:1.1fr 1fr}
+.h svg.scene{max-height:58vh}
+.h .txt p{font-size:clamp(1.05rem,2.3vh,1.3rem);line-height:1.55}
+.h .txt h2{font-size:clamp(2.2rem,4vw,3.4rem)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .ln{stroke-dashoffset:0}.js .f,.js .txt{opacity:1;transform:none}figure{clip-path:none}}
+@media print{#bar,#film,#gl,#cur,header.nav{display:none}.js .ln{stroke-dashoffset:0}.js .f,.js .txt{opacity:1;transform:none}figure{clip-path:none}.hero{min-height:auto}body{print-color-adjust:exact;-webkit-print-color-adjust:exact}.panel{break-inside:avoid}}
+</style></head><body>
+<div id="bar"></div><canvas id="gl" aria-hidden="true"></canvas><div id="cur"></div><div id="toast" role="status"></div>
+<header class="nav"><span class="brand">Ajanta Cave 1</span><button id="sk" class="tg" role="switch" aria-checked="false"><span>Sketch view</span><i></i></button></header>
+<svg width="0" height="0" style="position:absolute"><defs><symbol id="p" viewBox="0 0 40 90"><circle cx="20" cy="14" r="13" fill="none" stroke="#e0a85a" stroke-width="1.5" opacity=".7"/><circle cx="20" cy="14" r="9" fill="#e0a85a"/><path d="M12 8q8-9 16 0z" fill="#17110d"/><path d="M9 27q11 6 22 0l4 18H5z" fill="#e0a85a"/><path d="M5 45h30l6 43H-1z" fill="#b5482a"/><path d="M10 30l22 14M6 62q14 8 28 0" stroke="#f1e6cf" stroke-width="2.5" fill="none"/></symbol></defs></svg>
+<main>
+<section class="hero"><h1>The Prince Who Swam Seven Days</h1><p>A storyboard of the Mahajanaka Jātaka, as painted on the walls of Ajanta Cave 1, retold in six frames.</p><div class="id"><b>D Sai Sri Harshit</b><span>RA2411030010053 · W1 · CSE Cyber Security</span></div><button class="btn">Begin the story</button></section>
+<div class="mq" aria-hidden="true"><div></div></div>
+<section class="cards">
+<article class="card"><h3>The brief</h3><p>Turn a narrative from the Ajanta cave paintings into a visual story. 21LEM301T Indian Art Form, Assignment 4, CO2, 10 marks.</p></article>
+<article class="card"><h3>The objective</h3><p>Interpret a historical and religious story and retell it in a modern visual storytelling format.</p></article>
+<article class="card"><h3>The method</h3><p>Six hand-built vector frames, each with a shot type and a director’s note. Switch to Sketch view to see the line drawings beneath the colour.</p></article>
+</section>
+<div id="story"><div class="track">
+<section class="panel"><figure><svg class="scene" viewBox="0 0 600 400"><rect width="600" height="400" fill="#2f4a7a"/><circle class="f" cx="470" cy="120" r="44" fill="#e0a85a"/><g class="par"><path class="f" d="M0 290Q75 270 150 290T300 290T450 290T600 290V400H0Z" fill="#1d3358"/><path class="f" d="M140 262Q300 340 460 262Z" fill="#b5482a"/><path class="f" d="M310 250Q420 190 310 112Z" fill="#f1e6cf"/><use class="f" href="#p" x="236" y="198" width="34" height="76"/></g><path class="ln" d="M310 262V100M140 262Q300 340 460 262ZM0 290Q75 270 150 290T300 290T450 290T600 290M60 330q40-14 80 0t80 0"/></svg></figure>
+<div class="txt"><span class="shot">Panel 1 of 6 · Wide shot, eye level</span><h2>He sets sail</h2><p>Mahajanaka’s father is dead and an uncle holds the throne. The young prince boards a merchant ship with a plan: sail to the golden land, earn wealth, and return to claim what is his.</p><p class="note">Director’s note: a tiny figure under a huge sun. The ambition is big, the prince is small.</p></div></section>
+<section class="panel"><figure><svg class="scene" viewBox="0 0 600 400"><rect width="600" height="400" fill="#141c2c"/><path class="f" d="M360 0L300 120h50L290 250l110-150h-52L420 0Z" fill="#e0a85a"/><g class="par"><path class="f" d="M170 250L420 300L400 340L190 300Z" fill="#b5482a" transform="rotate(-14 300 290)"/><path class="f" d="M0 330Q60 240 130 330T260 330T390 330T520 330T650 330V400H0Z" fill="#2f4a7a"/></g><path class="ln" d="M260 280L190 150M0 330Q60 240 130 330T260 330T390 330T520 330T650 330M0 370Q60 290 130 370T260 370T390 370T520 370T650 370M170 250L420 300L400 340L190 300Z"/></svg></figure>
+<div class="txt"><span class="shot">Panel 2 of 6 · Low angle, tilted</span><h2>The storm</h2><p>Days out, the sky breaks. Waves lift the ship and split its hull. Merchants cry out to their gods while the mast falls into the water.</p><p class="note">Director’s note: tilt the frame. Diagonals and a lightning bolt make the viewer feel the deck slide away.</p></div></section>
+<section class="panel"><figure><svg class="scene" viewBox="0 0 600 400"><rect width="600" height="400" fill="#1d3358"/><circle class="f" cx="110" cy="90" r="34" fill="#f1e6cf"/><g class="par"><circle class="f" cx="330" cy="228" r="13" fill="#e0a85a"/><path class="f" d="M343 232q40 4 70-14" stroke="#e0a85a" stroke-width="7" fill="none"/><path class="f" d="M80 330q40-30 80 0t80 0" stroke="#6f8466" stroke-width="10" fill="none"/></g><path class="ln" d="M0 250Q50 230 100 250T200 250T300 250T400 250T500 250T600 250M0 300Q50 280 100 300T200 300T300 300T400 300T500 300T600 300M0 350Q50 330 100 350T200 350T300 350T400 350T500 350T600 350"/></svg></figure>
+<div class="txt"><span class="shot">Panel 3 of 6 · Extreme wide, empty frame</span><h2>Seven days alone</h2><p>Every other soul is lost. Mahajanaka keeps swimming. He eats what he can and refuses to give in. Sun and moon pass over him seven times.</p><p class="note">Director’s note: leave most of the frame empty. Stillness and scale show the length of the ordeal better than action does.</p></div></section>
+<section class="panel"><figure><svg class="scene" viewBox="0 0 600 400"><rect width="600" height="400" fill="#2a1d14"/><circle class="f" cx="300" cy="150" r="120" fill="#6f8466"/><g class="par"><use class="f" href="#p" x="262" y="70" width="76" height="170"/><path class="f" d="M180 150Q240 190 290 210M420 150Q360 190 310 210" stroke="#e0a85a" stroke-width="9" fill="none"/><path class="f" d="M0 300Q75 270 150 300T300 300T450 300T600 300V400H0Z" fill="#2f4a7a"/></g><circle class="ln" cx="300" cy="150" r="120"/><circle class="ln" cx="300" cy="150" r="98"/><path class="ln" d="M0 300Q75 270 150 300T300 300T450 300T600 300M230 360q20-24 40 0M330 360q20-24 40 0"/></svg></figure>
+<div class="txt"><span class="shot">Panel 4 of 6 · Medium shot, rising angle</span><h2>The goddess Manimekhala</h2><p>The sea goddess sees a brave man in the water. She floats down in a halo of light, lifts him in her arms and carries him through the air to the shore at Mithila.</p><p class="note">Director’s note: the halo is the brightest shape on the wall. Ajanta’s painters used rounded, glowing forms to show grace.</p></div></section>
+<section class="panel"><figure><svg class="scene" viewBox="0 0 600 400"><rect width="600" height="400" fill="#6f8466"/><path class="f" d="M80 300h300v40H80Z" fill="#b9a98c"/><path class="f" d="M120 295q40-30 100-5l30 8v6H120Z" fill="#e0a85a"/><g class="par"><path class="f" d="M380 150Q480 40 580 150Z" fill="#b5482a"/><circle class="f" cx="480" cy="290" r="48" fill="#e0a85a"/></g><circle class="ln" cx="480" cy="290" r="48"/><path class="ln" d="M432 290h96M480 242v96M446 256l68 68M514 256l-68 68M380 150Q480 40 580 150ZM480 100v140M80 300h300v40H80Z"/></svg></figure>
+<div class="txt"><span class="shot">Panel 5 of 6 · Medium shot, high angle</span><h2>Crowned by a chariot</h2><p>Mithila’s king has died with no heir. Ministers send out the royal chariot to choose the next ruler. It stops beside a sleeping stranger on a stone slab, and Mahajanaka is crowned.</p><p class="note">Director’s note: the wheel and the royal parasol are the two symbols that tell us a king is coming.</p></div></section>
+<section class="panel"><figure><svg class="scene" viewBox="0 0 600 400"><rect width="600" height="400" fill="#e0a85a"/><g class="par"><circle class="f" cx="150" cy="150" r="70" fill="#6f8466"/><circle class="f" cx="105" cy="120" r="9" fill="#b5482a"/><circle class="f" cx="170" cy="100" r="9" fill="#b5482a"/><circle class="f" cx="190" cy="170" r="9" fill="#b5482a"/><use class="f" href="#p" x="440" y="190" width="60" height="140"/></g><path class="ln" d="M150 220V340M450 340V100M450 200L400 130M450 160L500 110M450 240L500 200M60 340H560" style="stroke:#17110d"/></svg></figure>
+<div class="txt"><span class="shot">Panel 6 of 6 · Wide shot, split frame</span><h2>One tree is bare</h2><p>Years later the king passes two mango trees. The fruited one has been stripped and broken by people grabbing for the fruit. The bare one stands untouched. He understands that wanting brings ruin, leaves his palace, and walks into the forest.</p><p class="note">Director’s note: split the frame in two. Left is wealth and the harm it draws, right is a figure who walks away from it.</p></div></section>
+</div></div>
+</main>
+<nav id="film" aria-label="Storyboard panels"><button aria-label="Panel 1">1</button><button aria-label="Panel 2">2</button><button aria-label="Panel 3">3</button><button aria-label="Panel 4">4</button><button aria-label="Panel 5">5</button><button aria-label="Panel 6">6</button><span id="cnt">Panel 01 of 06</span></nav>
+<footer>
+<h2>Painted in five pigments</h2>
+<p>Ajanta’s painters told stories in continuous narration, with one hero repeated across a single wall. This storyboard cuts that wall into frames, the way a film would. Click a colour to copy it.</p>
+<div class="pal"><button data-c="#e0a85a" style="background:#e0a85a">Yellow ochre<br>#e0a85a</button><button data-c="#b5482a" style="background:#b5482a;color:#f1e6cf">Red ochre<br>#b5482a</button><button data-c="#6f8466" style="background:#6f8466">Terre-verte<br>#6f8466</button><button data-c="#2f4a7a" style="background:#2f4a7a;color:#f1e6cf">Lapis blue<br>#2f4a7a</button><button data-c="#f1e6cf" style="background:#f1e6cf">Lime white<br>#f1e6cf</button></div>
+<p class="sig">Storyboard by D Sai Sri Harshit · RA2411030010053 · W1 · CSE Cyber Security</p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],H=document.documentElement;
+const RM=matchMedia('(prefers-reduced-motion:reduce)').matches,ok=!!(window.gsap&&window.ScrollTrigger);
+const panels=$$('.panel');
+$$('.ln').forEach(e=>e.setAttribute('pathLength',1));
+panels.forEach((p,i)=>{p.id='p'+(i+1);p.querySelector('svg.scene').setAttribute('role','img');p.querySelector('svg.scene').setAttribute('aria-label','Panel '+(i+1)+': '+p.querySelector('h2').textContent)});
+const sk=$('#sk');sk.onclick=()=>{const on=sk.getAttribute('aria-checked')!=='true';sk.setAttribute('aria-checked',on);document.body.classList.toggle('sketch',on)};
+$$('.pal button').forEach(b=>b.onclick=()=>{try{navigator.clipboard.writeText(b.dataset.c).catch(()=>{})}catch(e){}const t=$('#toast');t.textContent='Copied '+b.dataset.c;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),1600)});
+if(!ok){panels.forEach(p=>p.classList.add('in'))}else{
+H.classList.add('js');gsap.registerPlugin(ScrollTrigger);
+const h1=$('.hero h1');h1.setAttribute('aria-label',h1.textContent);
+h1.innerHTML=h1.textContent.split(' ').map(w=>'<span class="w" aria-hidden="true">'+[...w].map(c=>'<span class="ch">'+c+'</span>').join('')+'</span>').join(' ');
+if(!RM){gsap.from('.ch',{yPercent:115,rotate:8,duration:1.2,ease:'expo.out',stagger:.025,delay:.2});gsap.from('.hero p,.btn',{y:30,opacity:0,duration:1,stagger:.15,delay:.9,ease:'power3.out'});gsap.from('header.nav',{y:-40,opacity:0,duration:1,delay:.3})}
+gsap.to('#bar',{scaleX:1,ease:'none',scrollTrigger:{scrub:.3,start:0,end:'max'}});
+const mq=$('.mq div'),u='Ajanta Cave 1 ✦ Mahajanaka Jātaka ✦ Six panels ✦ Mineral pigments on lime plaster ✦ ';mq.textContent=u.repeat(3)+u.repeat(3);
+if(!RM){const tl=gsap.to(mq,{xPercent:-50,duration:34,ease:'none',repeat:-1});
+ScrollTrigger.create({onUpdate:s=>gsap.to(tl,{timeScale:1+Math.min(6,Math.abs(s.getVelocity())/250),duration:.2,overwrite:true,onComplete:()=>gsap.to(tl,{timeScale:1,duration:1.2})})})}
+if(!RM)gsap.from('.card',{y:70,opacity:0,rotateX:-14,duration:1,stagger:.15,ease:'power3.out',scrollTrigger:{trigger:'.cards',start:'top 80%'}});
+$$('.card').forEach(c=>{c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();gsap.to(c,{rotateY:((e.clientX-r.left)/r.width-.5)*14,rotateX:-((e.clientY-r.top)/r.height-.5)*14,transformPerspective:700,duration:.4})});c.addEventListener('pointerleave',()=>gsap.to(c,{rotateX:0,rotateY:0,duration:.6}))});
+const b=$('.btn');b.onclick=()=>$('#story').scrollIntoView({behavior:RM?'auto':'smooth'});
+b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();gsap.to(b,{x:(e.clientX-r.left-r.width/2)*.35,y:(e.clientY-r.top-r.height/2)*.35,duration:.4})});
+b.addEventListener('pointerleave',()=>gsap.to(b,{x:0,y:0,duration:.7,ease:'elastic.out(1,.4)'}));
+const cur=$('#cur');if(matchMedia('(hover:hover) and (pointer:fine)').matches){const qx=gsap.quickTo(cur,'x',{duration:.35}),qy=gsap.quickTo(cur,'y',{duration:.35});
+addEventListener('pointermove',e=>{gsap.set(cur,{opacity:1});qx(e.clientX);qy(e.clientY)});
+$$('a,button,.card,figure').forEach(e=>{e.addEventListener('pointerenter',()=>gsap.to(cur,{scale:1.8,duration:.3}));e.addEventListener('pointerleave',()=>gsap.to(cur,{scale:1,duration:.3}))})}
+const film=$('#film'),cnt=$('#cnt'),fb=$$('#film button');let ST=null;
+const mark=i=>{fb.forEach((x,j)=>x.classList.toggle('on',j===i));cnt.textContent='Panel 0'+(i+1)+' of 06'};mark(0);
+fb.forEach((x,i)=>x.onclick=()=>ST?scrollTo({top:ST.start+(ST.end-ST.start)*i/5,behavior:'smooth'}):panels[i].scrollIntoView({behavior:'smooth'}));
+const mm=gsap.matchMedia();
+mm.add('(min-width:900px)',()=>{if(RM){panels.forEach(p=>p.classList.add('in'));return}
+H.classList.add('h');const tr=$('.track'),dist=()=>tr.scrollWidth-innerWidth;
+ScrollTrigger.create({trigger:'#story',start:'top 70%',once:true,onEnter:()=>panels[0].classList.add('in')});
+const tw=gsap.to(tr,{x:()=>-dist(),ease:'none',scrollTrigger:{trigger:'#story',pin:true,scrub:.8,start:'top top',end:()=>'+='+dist(),invalidateOnRefresh:true,anticipatePin:1,
+onToggle:s=>gsap.to(film,{autoAlpha:s.isActive?1:0,duration:.4}),
+onUpdate:s=>{const v=s.progress*5;panels.forEach((p,i)=>{p.classList.toggle('in',v>i-.45);p.style.setProperty('--p',(v-i).toFixed(3))});mark(Math.min(5,Math.max(0,Math.round(v))))}}});
+ST=tw.scrollTrigger;return()=>{ST=null;H.classList.remove('h');gsap.set(film,{autoAlpha:0})}});
+mm.add('(max-width:899px)',()=>{ScrollTrigger.batch(panels,{start:'top 80%',onEnter:x=>x.forEach(p=>p.classList.add('in'))})});
+if(!RM)gsap.from('footer h2,footer p,.pal button',{y:50,opacity:0,duration:.9,stagger:.1,ease:'power3.out',scrollTrigger:{trigger:'footer',start:'top 75%'}});
+try{const cv=$('#gl'),R=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true});R.setPixelRatio(Math.min(devicePixelRatio,2));
+const sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(50,1,.1,100);cam.position.z=7;
+const N=1600,pos=new Float32Array(N*3),col=new Float32Array(N*3),pal=[[.88,.66,.35],[.18,.29,.48],[.71,.28,.16],[.95,.9,.81]];
+for(let i=0;i<N;i++){pos.set([(Math.random()-.5)*22,(Math.random()-.5)*22,(Math.random()-.5)*14-2],i*3);col.set(pal[i%4===3?3:i%3],i*3)}
+const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.BufferAttribute(pos,3));g.setAttribute('color',new THREE.BufferAttribute(col,3));
+const pts=new THREE.Points(g,new THREE.PointsMaterial({size:.045,vertexColors:true,transparent:true,opacity:.85,blending:THREE.AdditiveBlending,depthWrite:false}));sc.add(pts);
+const m=new THREE.Group();
+[[1.1,0xe0a85a],[1.6,0xb5482a],[2.1,0xe0a85a],[2.6,0x6f8466]].forEach(([r,c],i)=>{const t=new THREE.Mesh(new THREE.TorusGeometry(r,.014,8,120),new THREE.MeshBasicMaterial({color:c}));t.rotation.x=i*.5;t.userData.s=(i%2?-1:1)*(.004+i*.0015);m.add(t)});
+const ico=new THREE.Mesh(new THREE.IcosahedronGeometry(.7,1),new THREE.MeshBasicMaterial({color:0xf1e6cf,wireframe:true}));m.add(ico);sc.add(m);
+const S={v:0,mx:0,my:0};gsap.to(S,{v:1,ease:'none',scrollTrigger:{start:0,end:'max',scrub:1.2}});
+addEventListener('pointermove',e=>{S.mx=e.clientX/innerWidth-.5;S.my=e.clientY/innerHeight-.5});
+const size=()=>{R.setSize(innerWidth,innerHeight,false);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();m.position.x=innerWidth>900?2.8:0;m.scale.setScalar(innerWidth>900?.8:.55)};size();addEventListener('resize',size);
+const clk=new THREE.Clock(),draw=()=>{const t=clk.getElapsedTime();m.children.forEach(o=>{if(o.userData.s){o.rotation.y+=o.userData.s;o.rotation.z+=o.userData.s*.6}});
+ico.rotation.x=t*.3;ico.rotation.y=t*.2+S.v*8;m.rotation.y=S.v*6+S.mx*.5;m.rotation.x=S.my*.4;m.position.y=-S.v*2;
+pts.rotation.y=t*.02+S.v*1.5+S.mx*.15;pts.rotation.x=S.my*.1;cam.position.z=8-S.v*2;R.render(sc,cam)};
+RM?draw():gsap.ticker.add(draw);
+gsap.to(cv,{opacity:.3,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}})}catch(e){}
+}
+</script>
+</body></html>
